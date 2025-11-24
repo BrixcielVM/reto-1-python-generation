@@ -1,3 +1,5 @@
+
+
 productos = [
     {"id": 1, "nombre": "Laptop Pro 14", "categoria": "Computo", "precio": 25000, "descuento": 0.10, "stock": 5},
     {"id": 2, "nombre": "Mouse Gamer X", "categoria": "Accesorios", "precio": 1200, "descuento": 0.15, "stock": 20},
@@ -16,59 +18,45 @@ ventas = [
 
 tienda_info = ("TechieStore", "Santiago", 2025)
 
-#Mensaje de bienvenida
-print(f"Bienvenido a {tienda_info[0]} en {tienda_info[1]} ({tienda_info[2]})")
+"""1. Mensaje de bienvenida"""
 
-#Mostrar cuántos productos existen
-print(f"Total de productos: {len(productos)}")
+nombre_tienda = tienda_info[0]
+ubicacion = tienda_info[1]
+anio = tienda_info[2]
 
-#Precios finales con descuento
-#Producto 1
-prod1 = productos[0]
-prod1_desc = prod1["precio"] - (prod1["precio"] * prod1["descuento"])
-print(f"{prod1['nombre']} -> ${prod1_desc}")
+print(f"Bienvenido a {nombre_tienda} en {ubicacion} ({anio})")
 
-#Producto 2
-prod2 = productos[1]
-prod2_desc = prod2["precio"] - (prod2["precio"] * prod2["descuento"])
-print(f"{prod2['nombre']} -> ${prod2_desc}")
+"""2. Mostrar cuántos productos existen"""
 
-#Producto 3
-prod3 = productos[2]
-prod3_desc = prod3["precio"] - (prod3["precio"] * prod3["descuento"])
-print(f"{prod3['nombre']} -> ${prod3_desc}")
+total = len(productos)
+print(f"Total de productos: {total}")
 
-#Producto 4
-prod4 = productos[3]
-prod4_desc = prod4["precio"] - (prod4["precio"] * prod4["descuento"])
-print(f"{prod4['nombre']} -> ${prod4_desc}")
+"""3. Precio final con descuento (sin loops)"""
 
-#Producto 5
-prod5 = productos[4]
-prod5_desc = prod5["precio"] - (prod5["precio"] * prod5["descuento"])
-print(f"{prod5['nombre']} -> ${prod5_desc}")
+precio_mouse = 1200.0
+descuento_mouse = 0.15  # El porcentage de descuento del mouse es 15%
 
-#Total de cada venta
-#Venta 101
-venta_101_total = prod1_desc * 1
-print(f"Venta 101: {ventas[0]['cliente']} compró {ventas[0]['cantidad']} {prod1['nombre']} y pagó {venta_101_total}")
+precio_final_mouse = precio_mouse - (precio_mouse * descuento_mouse)
 
-#Venta 102
-venta_102_total = prod2_desc * 2
-print(f"Venta 102: {ventas[1]['cliente']} compró {ventas[1]['cantidad']} {prod2['nombre']} y pagó {venta_102_total}")
+print(f"Mouse Gamer X → ${precio_final_mouse}")
 
-#Venta 103
-venta_103_total = prod4_desc * 1
-print(f"Venta 103: {ventas[2]['cliente']} compró {ventas[2]['cantidad']} {prod4['nombre']} y pagó {venta_103_total}")
 
-#Venta 104
-venta_104_total = prod2_desc * 1
-print(f"Venta 104: {ventas[3]['cliente']} compró {ventas[3]['cantidad']} {prod2['nombre']} y pagó {venta_104_total}")
+"""4. Total de cada venta (sin loops)"""
 
-#Venta 105
-venta_105_total = prod5_desc * 3
-print(f"Venta 105: {ventas[4]['cliente']} compró {ventas[4]['cantidad']} {prod5['nombre']} y pagó {venta_105_total}")
+comprador_101 = "Ana"
+producto_101 = "Laptop Pro 14"
+cantidad_101 = 1
+precio_final_laptop = 22500.0
 
-#Ingreso total de la tienda
-ingreso_total = venta_101_total + venta_102_total + venta_103_total + venta_104_total + venta_105_total
+total_pagado_101 = precio_final_laptop * cantidad_101
+
+print(f"Venta 101: {comprador_101} compró {cantidad_101} {producto_101} y pagó {total_pagado_101}")
+
+"""5. Ingreso total de la tienda"""
+
+total_venta_101 = 22500.0
+total_venta_102 = 2040.0
+
+ingreso_total = total_venta_101 + total_venta_102
+
 print(f"Ingreso total: {ingreso_total}")
